@@ -7,18 +7,20 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var grades =  new List<double>() {12.7,10.3,6.11,4.1};
-            grades.Add(52.2);
-            var result = 0.0;
-            foreach(var number in grades)
-            {
-                result += number; 
-            }
-            Console.WriteLine($"total score {result:N1}");
-            Console.WriteLine($"Average {result/ grades.Count:N3}" );
-            Console.WriteLine("Student " + args[0]);
+            var book = new Book("Dave's Grades");
+            book.AddGrade(52.2);
+            book.AddGrade(77.6);
+            book.AddGrade(92.4);
+            var stats =  book.GetStatistics();
 
-
+        
+            Console.WriteLine($"High Grade {stats.High:N2}");
+            Console.WriteLine($"Low Grade {stats.Low:N2}");
+            Console.WriteLine($"Average {stats.Average:N2}" );
         }
     }
 }
+
+
+
+
