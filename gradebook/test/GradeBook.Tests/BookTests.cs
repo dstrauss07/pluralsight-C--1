@@ -7,7 +7,7 @@ namespace GradeBook.Tests
     public class BookTests
     {
         [Fact]
-        public void Test1()
+        public void BookCalculatesAnAverageGrade()
         {
             var book = new Book("");
             book.AddGrade(89.1);
@@ -19,6 +19,17 @@ namespace GradeBook.Tests
             Assert.Equal(85.6, result.Average, 1);
             Assert.Equal(90.5, result.High, 1);
             Assert.Equal(77.3, result.Low, 1);
+            Assert.Equal('B', result.Letter);
         }
+
+        //  [Fact]
+        //  public void AddInvalidgrade()
+        //  {
+        //      var book = new Book("");
+        //      book.AddGrade(105);
+        //      var result = book.GetStatistics();
+
+        //      Assert.Equal(0, result.Low);
+        //  }
     }
 }
